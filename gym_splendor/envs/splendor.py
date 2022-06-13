@@ -36,15 +36,15 @@ class splendorEnv(gym.Env):
         }
 
     def render(self, mode='human', close=False):
-        # print('----------------------------------------------------------------------------------------------------')
-        # print('Turn:', self.turn, 'Board stocks:', self.board.stocks)
+        print('----------------------------------------------------------------------------------------------------')
+        print('Turn:', self.turn, 'Board stocks:', self.board.stocks)
         for k in [3,4,5]:
-            # print(f'card level {k-2}:', self.board.normal_cards[k], end=' ')
+            print(f'card level {k-2}:', self.board.normal_cards[k], end=' ')
             pass
         
-        # print('card noble:', self.board.noble_cards)
+        print('card noble:', self.board.noble_cards)
         for p in self.players:
-            # print(p.name, p.score, p.stocks, p.stocks_const, p.opened_cards, p.upside_cards)
+            print(p.name, p.score, p.stocks, p.stocks_const, p.opened_cards, p.upside_cards)
             pass
 
     def close(self):

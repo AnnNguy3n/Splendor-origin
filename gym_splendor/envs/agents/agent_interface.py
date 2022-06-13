@@ -1,4 +1,10 @@
 from gym_splendor.envs.agents.agent_Ann import agent_Ann as p1
+# from gym_splendor.envs.agents.agent_Ann import agent_Ann as p2
+# from gym_splendor.envs.agents.agent_Ann import agent_Ann as p3
+# from gym_splendor.envs.agents.agent_Ann import agent_Ann as p4
+
+
+# from gym_splendor.envs.agents.agent_A import agent_A as p1
 from gym_splendor.envs.agents.agent_A import agent_A as p2
 from gym_splendor.envs.agents.agent_A import agent_A as p3
 from gym_splendor.envs.agents.agent_A import agent_A as p4

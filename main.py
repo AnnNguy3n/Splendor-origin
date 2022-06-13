@@ -20,7 +20,7 @@ def main():
     for i in range(env.players.__len__()):
         env.dict_input['Players'] = [env.players[(j+1)%env.amount_player] for j in range(env.amount_player-1)]
         env.players[i].action(env.dict_input)
-        env.render()
+        # env.render()
     
     _ = [p for p in env.players if p.score == env.board.current_highest_score]
     _t = [p.opened_cards.__len__() + p.upside_cards.__len__() for p in _]
@@ -34,6 +34,10 @@ def main():
     return 'None'
 
 a = time.time()
+# for i in range(10000):
+#     print(i, end=' ')
+#     main()
+
 cnt = Counter(main() for i in range(100))
 print(cnt)
 b = time.time()

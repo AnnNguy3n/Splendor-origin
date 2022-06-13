@@ -34,8 +34,13 @@ class Agent(Player):
         v_ = self.check_victory(state)
         if v_ == -1:
             list_index_action = self.get_list_index_action(state)
+            if self.__mode == 2:
+                action = random.choice(list_index_action)
+                self.__history.append(action)
+                return action
+
             list_max_rating = numpy.where(self.__rating[list_index_action] == max(self.__rating[list_index_action]))[0]
-            if self.__mode == 1 or numpy.random.uniform() <= 0.8:
+            if self.__mode == 1 or numpy.random.uniform() <= 0.5:
                 act_ = random.choice(list_max_rating)
                 action = list_index_action[act_]
             else:
@@ -50,7 +55,7 @@ class Agent(Player):
             return action
         
         else:
-            if self.__mode == 0:
+            if self.__mode == 0 or self.__mode == 2:
                 with open('gym_splendor/envs/agents/agent_Ann/Data/simple_greedy.json', 'r') as f:
                     data = numpy.array(json.load(f))
 

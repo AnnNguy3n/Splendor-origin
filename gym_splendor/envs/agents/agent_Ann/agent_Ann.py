@@ -10,7 +10,7 @@ class Agent(Player):
     def reset(self):
         super().reset()
         self.__history = []
-        self.__mode = 1
+        self.__mode = 1 # 0: training, 1: testing, 2: generating
         try:
             with open('gym_splendor/envs/agents/agent_Ann/Data/simple_greedy.json', 'r') as f:
                 self.__data = numpy.array(json.load(f))
